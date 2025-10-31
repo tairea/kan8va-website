@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>KAN8VA — Pacific Education & STEM Consultancy</title>
+  <meta name="description" content="KAN8VA (Kanava): Pacific‑first education consultancy partnering with Ministries of Education to deliver culturally grounded, future‑focused solutions in academic excellence and STEM."/>
+  <meta name="theme-color" content="#fefefc"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fefefc;
+      --ink: #000000;
+      --muted: #5e5e5e;
+      --link: #5e5e5e;
+      --maxw: 1200px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      z-index: 100;
+      padding: 20px 24px;
+    }
+    
+    .nav-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .brand {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.2px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 120px;
+      padding-top: 40px;
+    }
+    
+    .hero h1 {
+      font-size: clamp(32px, 8vw, 72px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    
+    .greeting-container {
+      position: relative;
+      display: block;
+      min-height: 1.2em;
+      margin-bottom: 8px;
+    }
+    
+    .greeting {
+      font-size: clamp(32px, 8vw, 72px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--ink);
+      display: inline-block;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    
+    .greeting.fade-out {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    
+    .greeting.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .hero-subline {
+      font-size: clamp(32px, 8vw, 72px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--ink);
+    }
+    
+    .hero-subline img {
+      height: auto;
+      width: 50%;
+      vertical-align: baseline;
+      display: inline-block;
+    }
+    
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-bottom: 24px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Sections */
+    section {
+      margin-bottom: 100px;
+    }
+    
+    section:last-child {
+      margin-bottom: 0;
+    }
+    
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 32px;
+      letter-spacing: -0.3px;
+    }
+    
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 32px;
+    }
+    
+    .service-item h4 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
+    }
+    
+    .service-item p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    
+    /* App Rows */
+    .apps {
+      margin-top: 32px;
+    }
+    
+    .app-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: opacity 0.2s;
+    }
+    
+    .app-row:last-child {
+      border-bottom: none;
+    }
+    
+    .app-row:hover {
+      opacity: 0.7;
+    }
+    
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .app-icon.amanaki {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+    
+    .app-icon.pld {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+    
+    .app-icon.toolkit {
+      background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    }
+    
+    .app-content {
+      flex: 1;
+    }
+    
+    .app-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      letter-spacing: -0.2px;
+    }
+    
+    .app-description {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    
+    .app-status {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--ink);
+      margin-top: 8px;
+    }
+    
+    /* About Section */
+    .about-text {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 700px;
+      margin-bottom: 32px;
+    }
+    
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    
+    .value-item {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    
+    .value-item strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+    
+    /* Why Section */
+    .why-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+    
+    .why-list li {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      padding-left: 0;
+    }
+    
+    .why-list li strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+    
+    /* Contact */
+    .contact-text {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+    
+    .contact-info {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    
+    .contact-info a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(94, 94, 94, 0.3);
+      transition: border-color 0.2s;
+    }
+    
+    .contact-info a:hover {
+      border-bottom-color: var(--link);
+    }
+    
+    /* Footer */
+    footer {
+      margin-top: 120px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    
+    .footer-text {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 60px 20px 80px;
+      }
+      
+      .hero {
+        margin-bottom: 80px;
+      }
+      
+      .nav-links {
+        gap: 20px;
+      }
+      
+      .nav-links a {
+        font-size: 14px;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      .app-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      section {
+        margin-bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="#home" class="brand">KAN8VA</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#programmes">Programmes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" id="home">
+    <!-- Hero -->
+    <section class="hero">
+      <h1>
+        <div class="greeting-container">
+          <span class="greeting" id="greeting">Kia orana</span>
+        </div>
+        <div class="hero-subline">we are<br><img src="kan8va-logo.png" alt="KAN8VA"></div>
+      </h1>
+      <h2>Pacific Education & STEM Consultancy</h2>
+      <p>We partner with Pacific Island Ministries of Education to design and deliver culturally grounded, future‑focused solutions in academic excellence and STEM.</p>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h3>Services</h3>
+      <p class="about-text">Tailored education solutions for Pacific people — from strategy to sustained impact.</p>
+      <div class="services-grid">
+        <div class="service-item">
+          <h4>Strategic Consultancy</h4>
+          <p>Co‑develop national education strategies, STEM frameworks and implementation road‑maps aligned to local realities and goals.</p>
+        </div>
+        <div class="service-item">
+          <h4>Programme Design & Delivery</h4>
+          <p>From STEM academies to professional learning modules for teachers and leaders. Co‑designed, context‑rich, and ready to implement.</p>
+        </div>
+        <div class="service-item">
+          <h4>Capacity Building</h4>
+          <p>Workshops, coaching and ongoing support for ministry teams, school leaders and teachers to lead and sustain transformation.</p>
+        </div>
+        <div class="service-item">
+          <h4>Research, Monitoring & Evaluation</h4>
+          <p>Measure impact, inform improvement and build evidence of what works in Pacific contexts.</p>
+        </div>
+        <div class="service-item">
+          <h4>Implementation Support</h4>
+          <p>On‑the‑ground rollout of STEM initiatives, digital tools and innovative practices — from curriculum to resources and change management.</p>
+        </div>
+        <div class="service-item">
+          <h4>Advisory & Facilitation</h4>
+          <p>Leadership retreats, stakeholder alignment, and co‑design to accelerate change and build shared ownership.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programmes -->
+    <section id="programmes">
+      <h3>Programmes & Tools</h3>
+      <div class="apps">
+        <div class="app-row">
+          <div class="app-icon amanaki"></div>
+          <div class="app-content">
+            <div class="app-title">Amanaki STEM Academy</div>
+            <div class="app-description">Robotics, coding, renewable energy, applied science. Teacher capability, mentoring, and learner pathways.</div>
+            <span class="app-status">Live</span>
+          </div>
+        </div>
+        <div class="app-row">
+          <div class="app-icon pld"></div>
+          <div class="app-content">
+            <div class="app-title">Teacher PLD Modules</div>
+            <div class="app-description">Short, practical modules for leaders and teachers; delivery online and in‑person.</div>
+            <span class="app-status">Live</span>
+          </div>
+        </div>
+        <div class="app-row">
+          <div class="app-icon toolkit"></div>
+          <div class="app-content">
+            <div class="app-title">Systems Advisory Toolkit</div>
+            <div class="app-description">Templates, frameworks and guides for ministries and school networks.</div>
+            <span class="app-status">In development</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h3>About KAN8VA</h3>
+      <p class="about-text">KAN8VA takes its name from the Tokelau <strong>kanava</strong> tree — a symbol of deep roots and enduring growth. We exist to ensure every Pacific learner can access world‑class education and the confidence to thrive.</p>
+      <p class="about-text">We blend <strong>system‑level consultancy</strong> with <strong>hands‑on programme design and delivery</strong>, translating strategy into classroom‑level change across island contexts.</p>
+      
+      <h3 style="margin-top: 60px; margin-bottom: 24px;">Our values</h3>
+      <div class="values">
+        <div class="value-item"><strong>Culture & Community</strong> — centring Pacific languages, knowledge and place.</div>
+        <div class="value-item"><strong>Excellence & Innovation</strong> — leading STEM learning that inspires.</div>
+        <div class="value-item"><strong>Collaboration & Sustainability</strong> — co‑designing for lasting impact.</div>
+        <div class="value-item"><strong>Equity & Opportunity</strong> — every learner experiencing success.</div>
+      </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section id="why">
+      <h3>Why Choose KAN8VA</h3>
+      <ul class="why-list">
+        <li><strong>Pacific Expertise</strong> — fluent in island geographies, language and culture.</li>
+        <li><strong>End‑to‑End Delivery</strong> — from strategy to classroom practice; we stay with you through design, delivery and evaluation.</li>
+        <li><strong>STEM Leadership</strong> — proven track‑record including the founding of Amanaki STEM Academy.</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h3>Contact</h3>
+      <p class="contact-text">Tell us about your goals and context. We'll suggest next steps and options for an initial call.</p>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:hello@kan8va.org">hello@kan8va.org</a></p>
+        <p><strong>Regions:</strong> Pacific Islands, Aotearoa New Zealand and beyond</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-text">KAN8VA — Pacific Education & STEM Consultancy</div>
+      <div class="footer-tagline">Rooted in the Pacific • Culturally grounded • Future‑focused</div>
+    </footer>
+  </main>
+
+  <script>
+    // Pacific Island greetings
+    const greetings = [
+      { text: 'Kia orana', origin: 'Cook Islands' },
+      { text: 'Talofa', origin: 'Samoa' },
+      { text: 'Bula', origin: 'Fiji' },
+      { text: 'Mālō e lelei', origin: 'Tonga' },
+      { text: 'Aloha', origin: 'Hawaiʻi' },
+      { text: 'Ia orana', origin: 'Tahiti' },
+      { text: 'Kia ora', origin: 'Aotearoa New Zealand' },
+      { text: 'Yokwe', origin: 'Marshall Islands' },
+      { text: 'Talofa lava', origin: 'Samoa' },
+      { text: 'Mālō', origin: 'Tonga' }
+    ];
+
+    let currentIndex = 0;
+    const greetingElement = document.getElementById('greeting');
+    
+    function rotateGreeting() {
+      // Fade out
+      greetingElement.classList.add('fade-out');
+      
+      setTimeout(() => {
+        // Update greeting
+        currentIndex = (currentIndex + 1) % greetings.length;
+        greetingElement.textContent = greetings[currentIndex].text;
+        
+        // Fade in
+        greetingElement.classList.remove('fade-out');
+        greetingElement.classList.add('fade-in');
+        
+        setTimeout(() => {
+          greetingElement.classList.remove('fade-in');
+        }, 500);
+      }, 500);
+    }
+    
+    // Start rotation after initial delay, then repeat every 3 seconds
+    setTimeout(() => {
+      rotateGreeting();
+      setInterval(rotateGreeting, 3000);
+    }, 2000);
+  </script>
+</body>
+</html>

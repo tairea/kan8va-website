@@ -1,0 +1,55 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Testing artifacts
+.playwright-mcp/
+.playwright/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build artifacts (if you add a build process later)
+dist/
+build/
+*.min.js
+*.min.css
+
+# Node modules (if you add npm packages later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Backup files
+*.bak
+*.backup
+*~
+
